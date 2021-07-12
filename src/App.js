@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+
+import Accueil from './views/Accueil';
+import Favoris from './views/Favoris';
+import Recherche from './views/Recherche';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <div className="App">
+        <header>
+          <h1>Mon application</h1>
+          <NavLink to="/"  activeClassName="selected" exact>Accueil</NavLink>
+          <NavLink to="/recherche" activeClassName="selected" exact>Recherche</NavLink>
+          <NavLink to="/favoris" activeClassName="selected" exact>Favoris</NavLink>
+        </header>
+
+        <Route path="/" component={Accueil} exact />
+        <Route path="/recherche" component={Recherche} exact />
+        <Route path="/favoris" component={Favoris} exact />
+      </div>
+    </BrowserRouter>
   );
 }
 
