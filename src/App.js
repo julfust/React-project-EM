@@ -1,5 +1,3 @@
-import './App.css';
-
 import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 
 import Accueil from './views/Accueil';

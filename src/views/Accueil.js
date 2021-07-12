@@ -1,6 +1,6 @@
 function Acceuil() {
     return (
-        <div>
+        <div className="accueil">
             <h1>Page d'accueil</h1>
         </div>
     )

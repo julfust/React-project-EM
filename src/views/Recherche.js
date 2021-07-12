@@ -1,6 +1,6 @@
 function Recherche() {
     return (
-        <div>
+        <div className="recherche">
             <h1>Page de recherche</h1>
         </div>
     )

@@ -1,6 +1,6 @@
 function Favoris() {
     return (
-        <div>
+        <div className="favoris">
             <h1>Page favoris</h1>
         </div>
     )
