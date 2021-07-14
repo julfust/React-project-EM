@@ -1,5 +1,31 @@
 .accueil {
-    * {
-        background-color: red;
+    max-width: 78rem;
+    margin: auto;
+
+    .header-title {
+        margin-top: 2em;
+        margin-bottom: 1.25rem;
+        font-size: 2.75rem;
+    }
+
+    .header-paragraph {
+        font-size: 1.25rem;
+    }
+
+    hr {
+        margin: 3% 0;
+        color: #4a4a4a;
+        opacity: 0.4;
+    }
+
+    .article-section-title {
+        margin-bottom: 1%;
+        font-size: 2.25rem;
+    }
+
+    .article-section-paragraph {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        font-size: 1.25rem;
     }
 }
