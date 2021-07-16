@@ -1,10 +1,10 @@
-@import "./views/_accueil.scss";
-
 @import "./components/navigation.scss";
 @import "./components/newsCard";
 
+@import "./views/_accueil.scss";
 @import "./views/_recherche.scss";
 @import "./views/_favoris.scss";
+@import "./views/detail.scss";
 
 body {
     margin: 0;

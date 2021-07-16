@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import NewsCard from '../components/NewsCard';
 
@@ -11,7 +12,7 @@ function Acceuil() {
             "https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records?sort=-date_start&limit=1"
         )
         .then((res) => {
-            setLatestNews(res);
+            setLatestNews(res.data.records[0]);
         });
     }, [])
 
@@ -27,7 +28,7 @@ function Acceuil() {
             <section>
                 <h2 className="article-section-title">Actualité</h2>
                 <p className="article-section-paragraph">Le dernier événement publié :</p>
-                <NewsCard news={latestNews} />
+                {latestNews !== undefined ? (<NavLink to={`/detail/${latestNews.record.id}`}><NewsCard news={latestNews} /></NavLink>) : (<div className="loading-view">Chargement...</div>)}
             </section>
         </div>
     )

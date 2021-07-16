@@ -5,7 +5,7 @@ function Favoris() {
     return (
         <div className="favoris">
             <Navigation />
-            <h1>Page favoris</h1>
+            <h1>Favoris</h1>
         </div>
     )
 }

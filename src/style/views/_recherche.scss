@@ -1,4 +1,19 @@
 .recherche {
     max-width: 78rem;
     margin: auto;
+
+    .header-title {
+        margin-top: 2em;
+        margin-bottom: 1.25rem;
+        font-size: 2.75rem;
+    }
+
+    .article-section-title {
+        margin: 3% 0;
+        font-size: 2.25rem;
+    }
+
+    .no-result-view {
+        font-size: 1.25em;
+    }
 }

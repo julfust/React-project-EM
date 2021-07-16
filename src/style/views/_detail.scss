@@ -1,0 +1,101 @@
+.detail {
+    max-width: 78rem;
+    margin: auto;
+
+    .header-title {
+        margin-top: 2em;
+        margin-bottom: 0;
+        font-size: 2.75rem;
+    }
+
+    .header-subtitle {
+        margin-bottom: 2%;
+        font-size: 2.2rem;
+    }
+
+    hr {
+        margin-top: 0%;
+        margin-bottom: 4%;
+    }
+
+    .img-container {
+        margin-bottom: 4%;
+        
+        & > img {
+            width: 100%;
+        }
+    }
+
+    .news-lead-text {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .news-description {
+        font-size: 1.2rem;
+    }
+
+    .news-aside {
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        padding: 1.25rem;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        border: 1px solid #DEDEDE;
+        box-shadow:  2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
+
+        .like-button {
+            margin-bottom: 2rem;
+            border-radius: 6px;
+
+            &:hover {
+                color: white;
+                background-color: #ff4d4f;
+            }
+        }
+
+        .aside-rubrique {
+            margin-bottom: 2rem;
+
+            .aside-rubrique-title {
+                margin-bottom: 0.5em;
+                font-size: 1.7rem;
+            }
+    
+            .aside-rubrique-content {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 1.2em;
+
+                .content-icon {
+                    margin-right: 0.3em;
+                    font-size: 1.5em;
+                }
+
+                a {
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+
+            address {
+                font-size: 1.2em;
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .loading-view {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
