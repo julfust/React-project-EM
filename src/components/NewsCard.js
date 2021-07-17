@@ -14,7 +14,7 @@ const NewsCard = ({ news, setFavorite }) => {
             <Card
                 hoverable
                 style={{ width: 280 }}
-                cover={<img alt="image évènement" src={news.fields.cover_url} />}
+                cover={<img alt="affiche évènement" src={news.fields.cover_url} />}
             >
                 <h3 className="news-title">{news.fields.title}</h3>
                 <p className="news-date">{dateParser(news.fields.date_start)}</p>

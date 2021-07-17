@@ -19,7 +19,7 @@ const Detail = (props) => {
             setNews(res.data.record);
         })
         .catch(() => setValideId(false));
-    }, [])
+    }, [newsId])
 
     return (
         <>
@@ -39,7 +39,7 @@ const Detail = (props) => {
                                     <Col span={16}>
                                         <article>
                                             <div className="img-container">
-                                                <img src={news.fields.cover_url} alt="image évènement" />
+                                                <img src={news.fields.cover_url} alt="affiche évènement" />
                                             </div>
                                             <h2 className="news-lead-text">{news.fields.lead_text}</h2>
                                             <p className="news-description" dangerouslySetInnerHTML={{__html: news.fields.description}}></p>
