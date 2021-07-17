@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import NewsCard from '../components/NewsCard';
 
-function Acceuil() {
+function Acceuil(props) {
     const [ latestNews, setLatestNews ] = useState();
 
     useEffect(() => {
@@ -28,7 +28,11 @@ function Acceuil() {
             <section>
                 <h2 className="article-section-title">Actualité</h2>
                 <p className="article-section-paragraph">Le dernier événement publié :</p>
-                {latestNews !== undefined ? (<NavLink to={`/detail/${latestNews.record.id}`}><NewsCard news={latestNews} /></NavLink>) : (<div className="loading-view">Chargement...</div>)}
+                {latestNews !== undefined ? (
+                    <Link to={`/detail/${latestNews.record.id}`}><NewsCard news={latestNews.record} setFavorite={props.setFavorite} /></Link>
+                ) : (
+                    <div className="loading-view">Chargement...</div>
+                )}
             </section>
         </div>
     )

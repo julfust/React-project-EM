@@ -18,22 +18,26 @@
         opacity: 0.4;
     }
 
-    .article-section-title {
-        margin-bottom: 1%;
-        font-size: 2.25rem;
-    }
+    section {
+        padding-bottom: 4em;
 
-    .article-section-paragraph {
-        margin-top: 0;
-        margin-bottom: 1.5rem;
-        font-size: 1.25rem;
-    }
+        .article-section-title {
+            margin-bottom: 1%;
+            font-size: 2.25rem;
+        }
 
-    .loading-view {
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-        font-size: 2rem;
-        font-weight: bold;
+        .article-section-paragraph {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+    
+        .loading-view {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
     }
 }

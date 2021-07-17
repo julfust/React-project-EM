@@ -5,7 +5,8 @@ import { Row, Col, Button } from 'antd';
 import { PhoneFilled, MailFilled, FacebookFilled } from '@ant-design/icons';
 import { Redirect, useParams } from 'react-router-dom';
 
-const Detail = () => {
+const Detail = (props) => {
+
     const { newsId } = useParams();
     const [news, setNews] = useState();
     const [validId, setValideId] = useState(true);
@@ -15,7 +16,6 @@ const Detail = () => {
             `https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records/${newsId}`
         )
         .then((res) => {
-            console.log(res)
             setNews(res.data.record);
         })
         .catch(() => setValideId(false));
@@ -47,7 +47,7 @@ const Detail = () => {
                                     </Col>
                                     <Col span={8}>
                                         <aside className="news-aside">
-                                            <Button className="like-button" size="large" danger>💗 Sauvegarder</Button>
+                                            <Button className="like-button" size="large" danger onClick={(e) => props.setFavorite(e, news)}>💗 Sauvegarder</Button>
                                             <div className="aside-rubrique">
                                                 <h3 className="aside-rubrique-title">Dates :</h3>
                                                 <p className="aside-rubrique-content" dangerouslySetInnerHTML={{__html: news.fields.date_description}}></p>
@@ -74,7 +74,7 @@ const Detail = () => {
                                             </div>
                                             <div className="aside-rubrique">
                                                 <h3 className="aside-rubrique-title">Plus d'infos</h3>
-                                                <p className="aside-rubrique-content"><span className="content-icon"><PhoneFilled /></span> <a href={`tel:${news.fields.contact_phone}`}>{news.fields.contact_phone}</a></p>
+                                                {news.fields.contact_phone && (<p className="aside-rubrique-content"><span className="content-icon"><PhoneFilled /></span> <a href={`tel:${news.fields.contact_phone}`}>{news.fields.contact_phone}</a></p>)}
                                                 {news.fields.contact_mail && (<p className="aside-rubrique-content"><span className="content-icon"><MailFilled /></span> <a href={`tel:${news.fields.contact_mail}`}>{news.fields.contact_mail}</a></p>)}
                                                 {news.fields.contact_facebook && (<p className="aside-rubrique-content"><span className="content-icon"><FacebookFilled /></span> <a href={`tel:${news.fields.contact_facebook}`}>{news.fields.contact_facebook}</a></p>)}
                                             </div>

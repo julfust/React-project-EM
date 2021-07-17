@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 const { Search } = Input;
 
-function Recherche() {
+function Recherche(props) {
     const [ news, setNews ] = useState();
     const [ search, setSearch ] = useState();
 
@@ -40,7 +40,7 @@ function Recherche() {
                             <Row gutter={16}>
                                 {news.map((item) => (
                                     <Col span={8} style={{paddingBottom: 50}} key={item.record.id}>
-                                        <NavLink to={`/detail/${item.record.id}`} ><NewsCard news={item} /></NavLink>
+                                        <NavLink to={`/detail/${item.record.id}`} ><NewsCard news={item.record} setFavorite={props.setFavorite} /></NavLink>
                                     </Col>
                                 ))}
                             </Row>
